@@ -1,4 +1,4 @@
-﻿#include "task_10_starter.hpp"
+﻿#include "task_10.hpp"
 #include <stack>
 
 ListNode* reverse_list(ListNode* head) {

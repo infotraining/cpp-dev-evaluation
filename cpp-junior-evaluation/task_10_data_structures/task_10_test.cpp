@@ -2,8 +2,9 @@
 
 #ifdef USE_SOLUTION
 #include "task_10_solution.hpp"
+using namespace Solution;
 #else
-#include "task_10_starter.hpp"
+#include "task_10.hpp"
 #endif
 
 TEST(DataStructuresTest, ReversesLinkedListInPlace) {

@@ -3,11 +3,13 @@
 
 #ifdef USE_SOLUTION
 #include "task_06_solution.hpp"
+using namespace Solution;
 #else
-#include "task_06_starter.hpp"
+#include "task_06.hpp"
 #endif
 
-TEST(LambdasCallbacksTest, FiltersElementsAboveThreshold) {
+TEST(LambdasCallbacksTest, FiltersElementsAboveThreshold)
+{
     std::vector<int> input = {1, 5, 10, 15, 20};
     auto res = filter_above_threshold(input, 10);
     ASSERT_EQ(res.size(), 2u);
@@ -15,7 +17,8 @@ TEST(LambdasCallbacksTest, FiltersElementsAboveThreshold) {
     EXPECT_EQ(res[1], 20);
 }
 
-TEST(LambdasCallbacksTest, DispatcherNotifiesAllSubscribers) {
+TEST(LambdasCallbacksTest, DispatcherNotifiesAllSubscribers)
+{
     EventDispatcher dispatcher;
     int sum = 0;
     int count = 0;

@@ -1,4 +1,4 @@
-﻿#include "task_06_starter.hpp"
+﻿#include "task_06.hpp"
 #include <algorithm>
 #include <iterator>
 
