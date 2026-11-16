@@ -3,9 +3,12 @@
 ## Polecenie
 1. Zaimplementuj strukturę `UserProfile` oraz funkcję `create_profile`:
    - `UserProfile` ma pola: `std::string username` oraz `std::vector<int> scores`.
-   - Funkcja `UserProfile create_profile(std::string username, std::vector<int> scores)` powinna przenieść argumenty do zwracanej struktury za pomocą `std::move`, minimalizując liczbę kopii.
-2. Zaimplementuj funkcję `int classify_value_category(int& x)` zwracającą `1` (dla lvalue) oraz `int classify_value_category(int&& x)` zwracającą `2` (dla rvalue).
-3. Zaimplementuj funkcję `int forward_test()`, która tworzy zmienną `int&& rref = 42;` i przekazuje ją do `classify_value_category(rref)` (powinno zwrócić `1`, ponieważ nazwana referencja rvalue jest lvalue!).
+   - Funkcję `UserProfile create_profile(std::string username, std::vector<int> scores)`
+2. Określ kategorie wartości w testach:
+   - `ValueCategory classify_value_category(int& x)` zwraca `ValueCategory::LValue`.
+   - `ValueCategory classify_value_category(int&& x)` zwraca `ValueCategory::RValue`.
+3. Zaimplementuj funkcję `ValueCategory perfect_forward_test(int&& x)` oraz `ValueCategory perfect_forward_test(int& x)`, która powinna poprawnie przekazywać argument do `classify_value_category` i zwracać odpowiednią kategorię wartości.
+4. Zaimplementuj `perfect_forward_test` jako szablon, który wykorzystuje perfect forwarding do przekazywania argumentu do `classify_value_category`.
 
 ## Kryteria oceny (0-3 pkt)
 - **0 pkt:** Błędne zrozumienie `lvalue`/`rvalue` lub brak kompilacji.

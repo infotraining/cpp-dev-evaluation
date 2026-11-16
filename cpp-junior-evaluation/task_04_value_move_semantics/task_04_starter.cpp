@@ -6,17 +6,20 @@ UserProfile create_profile(std::string username, std::vector<int> scores) {
     return UserProfile{};
 }
 
-int classify_value_category(int& x) {
+ValueCategory classify_value_category(int& x) {
     (void)x;
-    return 0;
+    return ValueCategory::LValue;
 }
 
-int classify_value_category(int&& x) {
+ValueCategory classify_value_category(int&& x) {
     (void)x;
-    return 0;
+    return ValueCategory::RValue;
 }
 
-int forward_test() {
-    int&& rref = 42;
-    return classify_value_category(rref);
+ValueCategory perfect_forward_test(int& x) {
+    return ValueCategory::ToDo; // call classify_value_category forwarding the argument correctly
+}
+
+ValueCategory perfect_forward_test(int&& x) {
+    return ValueCategory::ToDo; // call classify_value_category forwarding the argument correctly
 }

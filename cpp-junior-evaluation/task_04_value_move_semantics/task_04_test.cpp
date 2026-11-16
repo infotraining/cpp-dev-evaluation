@@ -20,8 +20,16 @@ TEST(ValueMoveSemanticsTest, CreateProfileMovesArguments) {
 
 TEST(ValueMoveSemanticsTest, ValueCategoriesAreCorrect) {
     int a = 10;
-    EXPECT_EQ(classify_value_category(a), 1);
-    EXPECT_EQ(classify_value_category(20), 2);
-    EXPECT_EQ(classify_value_category(std::move(a)), 2);
-    EXPECT_EQ(forward_test(), 1);
+
+    EXPECT_EQ(classify_value_category(a), ValueCategory::ToDo);
+    EXPECT_EQ(classify_value_category(20), ValueCategory::ToDo);
+    EXPECT_EQ(classify_value_category(std::move(a)), ValueCategory::ToDo);
+
+    int&& rv_ref = 665;
+    EXPECT_EQ(classify_value_category(rv_ref), ValueCategory::ToDo);
+    EXPECT_EQ(classify_value_category(std::move(rv_ref)), ValueCategory::ToDo);
+
+    EXPECT_EQ(perfect_forward_test(a), ValueCategory::LValue);
+    EXPECT_EQ(perfect_forward_test(20), ValueCategory::RValue);
+    EXPECT_EQ(perfect_forward_test(std::move(a)), ValueCategory::RValue);
 }
