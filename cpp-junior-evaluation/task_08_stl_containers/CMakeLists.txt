@@ -1,7 +1,7 @@
 add_executable(task_08_stl_containers_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_08_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_08_starter.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:task_08_solution.cpp>
 )
 
 target_include_directories(task_08_stl_containers_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

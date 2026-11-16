@@ -1,7 +1,7 @@
 add_executable(task_10_data_structures_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_10_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_10_starter.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:task_10_solution.cpp>
 )
 
 target_include_directories(task_10_data_structures_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

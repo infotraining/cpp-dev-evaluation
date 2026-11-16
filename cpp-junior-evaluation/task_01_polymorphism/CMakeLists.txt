@@ -1,7 +1,7 @@
 add_executable(task_01_polymorphism_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_01_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_01_starter.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:task_01_solution.cpp>
 )
 
 target_include_directories(task_01_polymorphism_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

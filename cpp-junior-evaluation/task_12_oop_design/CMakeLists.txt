@@ -1,7 +1,7 @@
 add_executable(task_12_oop_design_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_12_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_12_starter.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:task_12_solution.cpp>
 )
 
 target_include_directories(task_12_oop_design_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

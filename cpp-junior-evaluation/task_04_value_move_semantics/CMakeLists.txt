@@ -1,7 +1,7 @@
 add_executable(task_04_value_move_semantics_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_04_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_04_starter.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:task_04_solution.cpp>
 )
 
 target_include_directories(task_04_value_move_semantics_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

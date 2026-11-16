@@ -1,7 +1,7 @@
 add_executable(task_06_lambdas_callbacks_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_06_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_06_starter.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:task_06_solution.cpp>
 )
 
 target_include_directories(task_06_lambdas_callbacks_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
