@@ -4,8 +4,9 @@
 
 #ifdef USE_SOLUTION
 #include "task_11_solution.hpp"
+using namespace Solution;
 #else
-#include "task_11_starter.hpp"
+#include "task_11.hpp"
 #endif
 
 TEST(RaiiTest, ResetsFlagEvenWhenExceptionIsThrown) {

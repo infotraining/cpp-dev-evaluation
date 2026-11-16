@@ -1,7 +1,11 @@
+if (BUILD_SOLUTIONS)
+    file(GLOB SOLUTION_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*_solution*.cpp")
+endif()
+
 add_executable(task_12_oop_design_test
     task_12_test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_12_starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:task_12_solution.cpp>
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_12.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )
 
 target_include_directories(task_12_oop_design_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

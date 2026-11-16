@@ -3,8 +3,9 @@
 
 #ifdef USE_SOLUTION
 #include "task_12_solution.hpp"
+using namespace Solution;
 #else
-#include "task_12_starter.hpp"
+#include "task_12.hpp"
 #endif
 
 TEST(OopDesignTest, DateEnforcesInvariants) {

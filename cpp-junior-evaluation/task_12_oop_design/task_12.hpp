@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 
-class SimpleDate {
+class SimpleDate
+{
 public:
     SimpleDate(int day, int month, int year);
     void set_month(int month);
@@ -16,13 +17,15 @@ private:
     int year_;
 };
 
-class ILogger {
+class ILogger
+{
 public:
     virtual ~ILogger() = default;
     virtual void log(const std::string& msg) = 0;
 };
 
-class NotificationService {
+class NotificationService
+{
 public:
     explicit NotificationService(ILogger& logger);
     void send_alert(const std::string& user);
