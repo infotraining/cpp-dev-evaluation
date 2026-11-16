@@ -3,8 +3,9 @@
 
 #ifdef USE_SOLUTION
 #include "task_04_solution.hpp"
+using namespace Solution;
 #else
-#include "task_04_starter.hpp"
+#include "task_04.hpp"
 #endif
 
 TEST(ValueMoveSemanticsTest, CreateProfileMovesArguments) {

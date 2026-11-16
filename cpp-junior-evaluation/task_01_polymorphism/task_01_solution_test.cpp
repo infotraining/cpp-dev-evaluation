@@ -5,10 +5,10 @@
 #ifdef USE_SOLUTION
 #include "task_01_solution.hpp"
 #else
-#include "task_01_starter.hpp"
+#include "task_01.hpp"
 #endif
 
-TEST(PolymorphismTest, CalculatesTotalAreaCorrectly) {
+TEST(PolymorphismTest_Solution, CalculatesTotalAreaCorrectly) {
     using namespace Solution;
 
     // Create a vector of shapes
@@ -21,7 +21,7 @@ TEST(PolymorphismTest, CalculatesTotalAreaCorrectly) {
     EXPECT_NEAR(total_area(shapes), 23.14159265, 1e-5);
 }
 
-TEST(PolymorphismTest, EmptyVectorReturnsZero) {
+TEST(PolymorphismTest_Solution, EmptyVectorReturnsZero) {
     using namespace Solution;
     // Create an empty vector of shapes
     std::vector<std::unique_ptr<Shape>> shapes;

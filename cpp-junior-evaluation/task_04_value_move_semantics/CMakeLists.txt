@@ -1,7 +1,11 @@
+if (BUILD_SOLUTIONS)
+    file(GLOB SOLUTION_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*_solution*.cpp")
+endif()
+
 add_executable(task_04_value_move_semantics_test
-    task_04_test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_04_starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:task_04_solution.cpp>
+    task_04.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_04_test.cpp> 
+    $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )
 
 target_include_directories(task_04_value_move_semantics_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

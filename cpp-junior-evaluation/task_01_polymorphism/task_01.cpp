@@ -1,4 +1,4 @@
-#include "task_01_starter.hpp"
+#include "task_01.hpp"
 
 double total_area(/* TODO */) {
     // TODO: Oblicz sumę pól

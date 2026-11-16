@@ -5,7 +5,7 @@
 #include "task_03_solution.hpp"
 using namespace Solution;
 #else
-#include "task_03_starter.hpp"
+#include "task_03.hpp"
 #endif
 
 TEST(RuleOfFiveTest, DeepCopyWorksCorrectly) {

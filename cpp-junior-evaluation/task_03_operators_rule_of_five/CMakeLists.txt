@@ -1,7 +1,11 @@
+if (BUILD_SOLUTIONS)
+    file(GLOB SOLUTION_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*_solution*.cpp")
+endif()
+
 add_executable(task_03_operators_rule_of_five_test
     task_03_test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_03_starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:task_03_solution.cpp>
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_03.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )
 
 target_include_directories(task_03_operators_rule_of_five_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

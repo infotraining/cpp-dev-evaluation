@@ -1,7 +1,11 @@
+if (BUILD_SOLUTIONS)
+    file(GLOB SOLUTION_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*_solution*.cpp")
+endif()
+
 add_executable(task_01_polymorphism_test
-    task_01_test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_01_starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:task_01_solution.cpp>
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_01_test.cpp>
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_01.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )
 
 target_include_directories(task_01_polymorphism_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

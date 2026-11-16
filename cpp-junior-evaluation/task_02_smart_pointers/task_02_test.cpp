@@ -3,8 +3,9 @@
 
 #ifdef USE_SOLUTION
 #include "task_02_solution.hpp"
+using namespace Solution;
 #else
-#include "task_02_starter.hpp"
+#include "task_02.hpp"
 #endif
 
 TEST(SmartPointersTest, PacketBufferTransferOwnership) {
