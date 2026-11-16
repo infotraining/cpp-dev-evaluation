@@ -1,10 +1,9 @@
 #include <gtest/gtest.h>
+#include "task_05.hpp"
 
-#ifdef USE_SOLUTION
-#include "task_05_solution.hpp"
-#else
-#include "task_05_starter.hpp"
-#endif
-
-
+TEST(BankAccountTest, FirstTest)
+{
+    BankAccount account(100.0);
+    FAIL() << "Test not implemented yet";
+}
 
