@@ -5,8 +5,8 @@ Zaimplementuj klasę `IntArray` zarządzającą dynamiczną tablicą `int*` o za
 1. Konstruktor `explicit IntArray(size_t size)` (wypełnia tablicę zerami).
 2. Destruktor zwalniający pamięć.
 3. Konstruktor kopiujący i kopiujący operator przypisania (głęboka kopia, ochrona przed samoprzypisaniem `this == &other`).
-4. Konstruktor przenoszący i przenoszący operator przypisania (`noexcept`, wyzerowanie wskaźnika źródłowego).
-5. Operator indeksowania `int& operator[](size_t index)` oraz `const int& operator[](size_t index) const`.
+4. Konstruktor przenoszący i przenoszący operator przypisania.
+5. Operator indeksowania.
 6. Operator porównania `bool operator==(const IntArray& other) const`.
 
 ## Kryteria oceny (0-3 pkt)

@@ -9,7 +9,7 @@ size_t PacketBuffer::size() const {
     return size_;
 }
 
-std::unique_ptr<uint8_t[]> PacketBuffer::release_buffer() {
+uint8_t* PacketBuffer::release_buffer() {
     // TODO: Przekaż własność bufora i zaktualizuj size_
     return nullptr;
 }

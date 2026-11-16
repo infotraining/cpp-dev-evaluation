@@ -7,10 +7,10 @@ class PacketBuffer {
 public:
     explicit PacketBuffer(size_t size);
     size_t size() const;
-    std::unique_ptr<uint8_t[]> release_buffer();
+    uint8_t* release_buffer();
 
 private:
-    std::unique_ptr<uint8_t[]> data_;
+    uint8_t *data_;
     size_t size_;
 };
 
@@ -21,7 +21,7 @@ struct NodeA {
 };
 
 struct NodeB {
-    // TODO: Zmień typ na odpowiedni smart pointer przerywający cykl
     std::shared_ptr<NodeA> prev;
+    
     bool has_valid_prev() const;
 };

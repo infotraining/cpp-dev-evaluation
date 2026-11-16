@@ -4,8 +4,8 @@
 Zaimplementuj hierarchię klas reprezentujących figury geometryczne:
 1. Abstrakcyjna klasa bazowa `Shape` posiadająca:
    - czysto wirtualną metodę `double area() const = 0;`.
-2. Klasa pochodna `Circle` przyjmująca w konstruktorze `double radius` (pole: $\pi r^2$, użyj `3.14159265358979323846`).
-3. Klasa pochodna `Rectangle` przyjmująca w konstruktorze `double width, double height` (pole: $w \cdot h$).
+2. Klasa pochodna `Circle` przyjmująca w konstruktorze `double radius`
+3. Klasa pochodna `Rectangle` przyjmująca w konstruktorze `double width, double height`.
 4. Funkcja `double total_area(/* wektor obiektów typu Shape */)`, która sumuje pola wszystkich figur w wektorze.
 
 ## Kryteria oceny (0-3 pkt)

@@ -3,7 +3,8 @@
 #include <cstdint>
 #include <memory>
 
-class PacketBuffer {
+class PacketBuffer
+{
 public:
     explicit PacketBuffer(size_t size);
     size_t size() const;
@@ -16,11 +17,13 @@ private:
 
 struct NodeB;
 
-struct NodeA {
+struct NodeA
+{
     std::shared_ptr<NodeB> next;
 };
 
-struct NodeB {
+struct NodeB
+{
     std::weak_ptr<NodeA> prev;
     bool has_valid_prev() const;
 };

@@ -3,6 +3,7 @@
 
 #ifdef USE_SOLUTION
 #include "task_03_solution.hpp"
+using namespace Solution;
 #else
 #include "task_03_starter.hpp"
 #endif

@@ -1,4 +1,4 @@
-#include "solution.hpp"
+#include "task_01_solution.hpp"
 
 namespace Solution
 {
