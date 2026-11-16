@@ -1,0 +1,74 @@
+# C++ Project Requirements for AI Assistants
+
+## C++ Standard
+- **Standard**: C++23
+- **Required**: Yes (CMAKE_CXX_STANDARD_REQUIRED = ON)
+- **Extensions**: Disabled (CMAKE_CXX_EXTENSIONS = OFF)
+
+## Naming Conventions
+
+### Types (Classes, Structs, Enums)
+- **Convention**: PascalCase
+- **Examples**:
+  - `class Animal`
+  - `struct Vector3D`
+  - `enum class Color`
+  - `enum Status`
+
+### Functions and Methods
+- **Convention**: snake_case
+- **Examples**:
+  - `void calculate_sum()`
+  - `int get_value()`
+  - `bool is_valid()`
+  - `void set_data(int value)`
+
+### Variables
+- **Convention**: snake_case
+- **Examples**:
+  - `int counter = 0;`
+  - `std::string user_name;`
+  - `bool is_active = true;`
+
+### Constants
+- **Convention**: UPPER_SNAKE_CASE or snake_case (context-dependent)
+- **Examples**:
+  - `constexpr int MAX_SIZE = 100;`
+  - `const std::string default_value = "test";`
+
+### Private Members
+- **Convention**: snake_case with optional trailing underscore
+- **Examples**:
+  - `int data_`;
+  - `std::vector<int> items_;`
+
+## Compilation Flags
+- **MSVC**: `/W4` (Warning Level 4)
+- **GCC/Clang**: `-Wall -Wextra -Wpedantic`
+
+## Testing Framework
+- **Framework**: Google Test (gtest) v1.14.0
+- **Build Option**: `BUILD_SOLUTIONS` flag to switch between starter code and reference solutions
+
+## Project Structure
+- 12 task directories covering:
+  - Polymorphism
+  - Smart Pointers
+  - Operators & Rule of Five
+  - Value & Move Semantics
+  - Unit Testing with GTest
+  - Lambdas & Callbacks
+  - C++ Casts
+  - STL Containers
+  - STL Algorithms
+  - Data Structures
+  - RAII
+  - OOP Design
+
+## Guidelines for Code Generation
+1. Follow naming conventions strictly
+2. Use C++23 features when appropriate
+3. Enable and respect compiler warnings
+4. Write testable code compatible with GTest
+5. Include proper documentation comments
+6. Consider modern C++ best practices

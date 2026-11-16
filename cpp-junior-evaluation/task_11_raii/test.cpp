@@ -1,0 +1,24 @@
+#include <gtest/gtest.h>
+#include <stdexcept>
+#include <type_traits>
+
+#ifdef USE_SOLUTION
+#include "solution.hpp"
+#else
+#include "starter.hpp"
+#endif
+
+TEST(RaiiTest, ResetsFlagEvenWhenExceptionIsThrown) {
+    bool isRunning = false;
+
+    EXPECT_NO_THROW(executeWithGuard(isRunning, false));
+    EXPECT_FALSE(isRunning);
+
+    EXPECT_THROW(executeWithGuard(isRunning, true), std::runtime_error);
+    EXPECT_FALSE(isRunning);
+}
+
+TEST(RaiiTest, GuardIsNonCopyable) {
+    EXPECT_FALSE(std::is_copy_constructible<ScopeFlagGuard>::value);
+    EXPECT_FALSE(std::is_copy_assignable<ScopeFlagGuard>::value);
+}
