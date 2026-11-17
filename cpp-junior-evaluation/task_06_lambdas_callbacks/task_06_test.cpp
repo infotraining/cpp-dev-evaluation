@@ -17,6 +17,15 @@ TEST(LambdasCallbacksTest, FiltersElementsAboveThreshold)
     EXPECT_EQ(res[1], 20);
 }
 
+struct Device
+{
+    void use(int code)
+    {
+        std::cout << "Device used with code " << code << std::endl;
+    }
+    
+};
+
 TEST(LambdasCallbacksTest, DispatcherNotifiesAllSubscribers)
 {
     EventDispatcher dispatcher;
@@ -25,6 +34,11 @@ TEST(LambdasCallbacksTest, DispatcherNotifiesAllSubscribers)
 
     dispatcher.subscribe([&sum](int code) { sum += code; });
     dispatcher.subscribe([&count](int) { ++count; });
+
+    auto device = std::make_unique<Device>();
+
+    // subscribe device to dispatcher and call use() method when an event is emitted
+    // TODO
 
     dispatcher.emit(5);
     dispatcher.emit(10);
