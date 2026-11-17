@@ -14,7 +14,7 @@ if(BUILD_SOLUTIONS)
     target_compile_definitions(task_08_stl_containers_test PRIVATE USE_SOLUTION)
 endif()
 
-target_link_libraries(task_08_stl_containers_test PRIVATE GTest::gtest_main)
+target_link_libraries(task_08_stl_containers_test PRIVATE GTest::gmock_main)
 
 include(GoogleTest)
 gtest_discover_tests(task_08_stl_containers_test)
