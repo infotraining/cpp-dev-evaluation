@@ -17,15 +17,13 @@ TEST(OopDesignTest, DateEnforcesInvariants) {
     EXPECT_EQ(d.month(), 6);
 }
 
-TEST(OopDesignTest, NotificationServiceUsesComposition) {
-    struct MockLogger : public ILogger {
-        std::string lastMessage;
-        void log(const std::string& msg) override { lastMessage = msg; }
-    };
+TEST(OopDesignTest, NotificationServiceUsesComposition) 
+{
+    // TODO: Implement test that uses mock to verify that NotificationService.send_alert calls the logger correctly
 
-    MockLogger logger;
-    NotificationService service(logger);
+
+    NotificationService service;
     service.send_alert("admin");
 
-    EXPECT_EQ(logger.lastMessage, "Alert sent to: admin");
+    // EXPECT_EQ(mock_logger.last_message, "Alert sent to: admin"); // uncomment this line
 }

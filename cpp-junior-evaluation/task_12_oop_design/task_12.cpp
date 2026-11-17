@@ -16,8 +16,7 @@ void SimpleDate::set_month(int month)
     month_ = month;
 }
 
-NotificationService::NotificationService(ILogger& logger)
-    : logger_(logger)
+NotificationService::NotificationService()
 { }
 
 void NotificationService::send_alert(const std::string& user)

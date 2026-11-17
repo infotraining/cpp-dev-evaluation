@@ -3,7 +3,7 @@ if (BUILD_SOLUTIONS)
 endif()
 
 add_executable(task_12_oop_design_test
-    task_12_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_12_test.cpp>
     $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_12.cpp>
     $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )

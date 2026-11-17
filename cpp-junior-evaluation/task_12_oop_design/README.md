@@ -3,7 +3,7 @@
 ## Polecenie
 1. **Enkapsulacja i niezmienniki:** Zaimplementuj klasę `SimpleDate(int day, int month, int year)`:
    - Waliduj poprawność daty w konstruktorze oraz metodzie `set_month(int month)`: `year >= 1900`, `1 <= month <= 12`, `1 <= day <= 31`. W razie błędu rzuć `std::invalid_argument`, nie zmieniając stanu obiektu.
-2. **Kompozycja ponad dziedziczenie:** Zaimplementuj interfejs `ILogger` (`virtual void log(const std::string& msg) = 0;`) oraz klasę `NotificationService`, która przyjmuje `ILogger&` przez konstruktor (Dependency Injection) i w metodzie `send_alert(const std::string& user)` wywołuje `logger_.log("Alert sent to: " + user)`.
+2. **Mockowanie zależności:** Napisz test jednostkowy, który zweryfikuje, czy `NotificationService.send_alert()` wywołuje metodę `log()` na przekazanym loggerze z odpowiednim komunikatem.
 
 ## Kryteria oceny (0-3 pkt)
 - **0 pkt:** Publiczne pola bez walidacji lub użycie dziedziczenia zamiast kompozycji.
