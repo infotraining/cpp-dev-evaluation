@@ -10,3 +10,7 @@ If Doxygen is installed, generate the API documentation using the supplied `Doxy
 * **1:** API comments or one diagram is present, but key behavior is unclear.
 * **2:** Doxygen comments and both diagrams describe the lifecycle correctly.
 * **3:** Clear public contracts, accurate diagrams, and successful Doxygen generation where available.
+
+The reference solution (`task_12_solution.hpp`) uses Doxygen commands (`\file`, `\brief`, `\retval`, `\pre`/`\post`, `\code`, `\dot`, `\msc`). Generate it with `doxygen Doxyfile.solution`.
+
+The solution's `\dot` diagram requires Graphviz (`dot`) on `PATH`. Its `\msc` diagram uses Doxygen's built-in renderer; no external `mscgen` is required. Run Doxygen from the task directory.

@@ -1,35 +1,34 @@
-#pragma once
+﻿#pragma once
 
+#include <map>
 #include <string>
 
 struct Order
 {
+    std::string customer_email;
+    std::string customer_type; // "regular", "premium", "vip"
     std::string item;
     int quantity{};
-    bool operator==(const Order&) const = default;
+    int unit_price_cents{};
+    std::string payment_method; // "card", "paypal"
 };
 
-class InventoryService
+enum class OrderStatus
 {
-public:
-    virtual ~InventoryService() = default;
-    virtual bool reserve(const std::string& item, int quantity) = 0;
+    Confirmed,
+    InvalidOrder,
+    OutOfStock,
+    PaymentFailed
 };
 
-class NotificationService
-{
-public:
-    virtual ~NotificationService() = default;
-    virtual void order_confirmed(const Order& order) = 0;
-};
-
+// God class: validation, pricing, stock management, payment, notification and logging
+// are all hard-wired here. Adding a customer type or payment method means editing process().
 class OrderProcessor
 {
 public:
-    OrderProcessor(InventoryService& inventory, NotificationService& notifier);
-    bool process(const Order& order);
+    OrderProcessor();
+    OrderStatus process(const Order& order);
 
 private:
-    InventoryService& inventory_;
-    NotificationService& notifier_;
+    std::map<std::string, int> stock_;
 };

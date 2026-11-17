@@ -12,3 +12,8 @@ endif()
 target_link_libraries(task_11_refactoring_gmock_test PRIVATE GTest::gtest_main GTest::gmock)
 include(GoogleTest)
 gtest_discover_tests(task_11_refactoring_gmock_test)
+
+add_executable(task_11_refactoring_steps_test task_11_steps_test.cpp)
+target_include_directories(task_11_refactoring_steps_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(task_11_refactoring_steps_test PRIVATE GTest::gtest_main GTest::gmock)
+gtest_discover_tests(task_11_refactoring_steps_test)
