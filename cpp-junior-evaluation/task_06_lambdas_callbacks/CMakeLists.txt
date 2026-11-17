@@ -1,7 +1,11 @@
+if (BUILD_SOLUTIONS)
+    file(GLOB SOLUTION_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*_solution*.cpp")
+endif()
+
 add_executable(task_06_lambdas_callbacks_test
-    test.cpp
-    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:starter.cpp>
-    $<$<BOOL:${BUILD_SOLUTIONS}>:solution.cpp>
+    task_06_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_06.cpp>
+    $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )
 
 target_include_directories(task_06_lambdas_callbacks_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

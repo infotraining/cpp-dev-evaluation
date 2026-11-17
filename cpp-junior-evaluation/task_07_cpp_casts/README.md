@@ -2,9 +2,9 @@
 
 ## Polecenie
 Zaimplementuj trzy funkcje wykorzystujące odpowiednie operatory rzutowania C++ (bez rzutowań w stylu C!):
-1. `int countDevelopers(const std::vector<Employee*>& staff)` – zlicza, ile wskaźników w wektorze faktycznie wskazuje na obiekty typu `Developer` (użyj `dynamic_cast`).
-2. `int truncateToInt(double value)` – jawnie konwertuje `double` na `int` przy użyciu `static_cast`.
-3. `void callLegacyApi(const char* text)` – przekazuje `text` do funkcji C `legacyPrint(char* str)`, która nie modyfikuje napisu, ale przyjmuje nie-const `char*` (użyj `const_cast`).
+1. `int count_developers(const std::vector<Employee*>& staff)` – zlicza, ile wskaźników w wektorze faktycznie wskazuje na obiekty typu `Developer` (użyj `dynamic_cast`).
+2. `int truncate_to_int(double value)` – jawnie konwertuje `double` na `int` przy użyciu `static_cast`.
+3. `void call_legacy_api(const char* text)` – przekazuje `text` do funkcji C `legacy_print(char* str)`, która nie modyfikuje napisu, ale przyjmuje nie-const `char*` (użyj `const_cast`).
 
 ## Kryteria oceny (0-3 pkt)
 - **0 pkt:** Użycie C-style cast `(Type)x` lub niezdefiniowane zachowanie.

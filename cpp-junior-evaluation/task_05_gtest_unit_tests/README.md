@@ -1,13 +1,17 @@
 # Zadanie 5: Pisanie testów jednostkowych (Google Test)
 
 ## Polecenie
-Dana jest gotowa klasa `BankAccount` w pliku nagłówkowym. Twoim zadaniem jest napisanie zestawu testów jednostkowych w pliku `starter.cpp` (który w tym zadaniu jest plikiem z testami kandydata!):
-1. Utwórz klasę Fixture `BankAccountTest : public ::testing::Test` inicjalizującą konto z saldem `100.0`.
-2. Napisz minimum 4 testy `TEST_F`:
-   - `DepositIncreasesBalance`: wpłata `50.0` daje saldo `150.0`.
-   - `DepositNegativeThrows`: wpłata `-10.0` lub `0.0` rzuca `std::invalid_argument`.
-   - `WithdrawValidAmount`: wypłata `40.0` daje saldo `60.0`.
-   - `WithdrawOverBalanceThrows`: wypłata `150.0` rzuca `std::runtime_error`, a saldo pozostaje `100.0`.
+Napisz klasę `BankAccount` oraz zestaw testów jednostkowych w pliku z testami używając TDD.
+
+Opis wymagań:
+- Klasa `BankAccount` powinna posiadać konstruktor przyjmujący początkowe saldo.
+- Metodę `deposit(double amount)` do wpłacania środków.
+- Metodę `withdraw(double amount)` do wypłacania środków.
+- Metodę `transfer(BankAccount& to, double amount)` do przelewania środków między kontami.
+- Metodę `balance()` zwracającą aktualne saldo.
+- Wpłata lub wypłata ujemnej kwoty powinna rzucać `std::invalid_argument`.
+- Wypłata większej kwoty niż saldo powinna rzucać `std::runtime_error`.
+
 
 ## Kryteria oceny (0-3 pkt)
 - **0 pkt:** Testy nie kompilują się lub nie sprawdzają wyjątków.

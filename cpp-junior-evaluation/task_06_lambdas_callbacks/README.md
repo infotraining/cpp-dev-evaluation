@@ -1,7 +1,7 @@
 # Zadanie 6: Callbacki i wyrażenia lambda
 
 ## Polecenie
-1. Zaimplementuj funkcję `filterAboveThreshold(const std::vector<int>& data, int threshold)`, która wewnątrz wykorzystuje wyrażenie lambda przechwytujące `threshold` przez wartość i zwraca nowy wektor z elementami ściśle większymi niż `threshold`.
+1. Zaimplementuj funkcję `filter_above_threshold(const std::vector<int>& data, int threshold)`, która wewnątrz wykorzystuje wyrażenie lambda przechwytujące `threshold` przez wartość i zwraca nowy wektor z elementami ściśle większymi niż `threshold`.
 2. Zaimplementuj klasę `EventDispatcher`:
    - `void subscribe(std::function<void(int)> callback)` – rejestruje callback.
    - `void emit(int eventCode) const` – wywołuje wszystkie zarejestrowane callbacki w kolejności rejestracji.

@@ -5,7 +5,7 @@ Zaimplementuj klasę `ScopeFlagGuard` realizującą wzorzec RAII:
 1. Konstruktor `explicit ScopeFlagGuard(bool& flag)` ustawia `flag` na `true`.
 2. Destruktor przywraca `flag` na `false` (nawet gdy opuszczamy zakres przez wyjątek!).
 3. Zablokuj możliwość kopiowania i przenoszenia klasy (`= delete`).
-4. Zaimplementuj funkcję `void executeWithGuard(bool& activeFlag, bool shouldThrow)`, która tworzy lokalny obiekt `ScopeFlagGuard`, a jeśli `shouldThrow == true`, rzuca `std::runtime_error("Failure")`.
+4. Zaimplementuj funkcję `void execute_with_guard(bool& activeFlag, bool shouldThrow)`, która tworzy lokalny obiekt `ScopeFlagGuard`, a jeśli `shouldThrow == true`, rzuca `std::runtime_error("Failure")`.
 
 ## Kryteria oceny (0-3 pkt)
 - **0 pkt:** Flaga pozostaje `true` po rzuceniu wyjątku.
