@@ -1,0 +1,21 @@
+# Mid-Level C++ Evaluation Project Requirements
+
+## C++ Standard
+- C++23 is required.
+- CMAKE_CXX_EXTENSIONS is disabled.
+
+## Naming
+- Types use PascalCase.
+- Functions, methods, and variables use snake_case.
+- Constants use UPPER_SNAKE_CASE where appropriate.
+
+## Compiler Warnings
+- MSVC: /W4
+- GCC/Clang: -Wall -Wextra -Wpedantic
+
+## Testing
+- Google Test and Google Mock v1.14.0 are fetched through CMake.
+- BUILD_SOLUTIONS selects candidate starter code or reference solutions.
+
+## Structure
+- 12 independent task directories, each with a README, starter, reference solution, tests, and CMake configuration.
