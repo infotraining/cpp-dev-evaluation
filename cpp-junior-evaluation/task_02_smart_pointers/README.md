@@ -4,7 +4,7 @@
 1. Zaimplementuj klasę `PacketBuffer`, która alokuje tablicę `uint8_t` o podanym rozmiarze (`size`) i wypełnia ją zerami.
    - Metoda `size_t size() const` zwraca rozmiar bufora.
    - Metoda `uint8_t* release_buffer()` przekazuje własność bufora na zewnątrz (za pomocą `std::move`), zerując jednocześnie wewnętrzny rozmiar do `0`.
-   - Unowoncześnij implementację używając smart pointer'a zamiast natywnego wskaźnika.
+   - Popraw implementację używając smart pointerów zamiast natywnego wskaźnika.
 2. Rozwiąż problem cyklicznej referencji między klasami `NodeA` i `NodeB`:
    - Metoda `bool NodeB::has_valid_prev() const` zwraca `true`, jeśli obiekt `NodeA` nadal istnieje.
 

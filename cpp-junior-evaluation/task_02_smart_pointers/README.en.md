@@ -10,12 +10,15 @@
 2. Solve the circular reference problem between classes `NodeA` and `NodeB`:
    - Method `bool NodeB::has_valid_prev() const` returns `true` if the `NodeA` object still exists
 
+3. Implement the observer pattern using smart pointers to manage observer lifetimes
+
 ## Implementation Requirements
 
 - Use `std::unique_ptr<T[]>` for array management
 - Use `std::weak_ptr` to break circular references
 - Properly handle resource ownership transfer with `std::move`
 - Check pointer validity using `.expired()` and `.lock()` methods
+- Use `std::shared_ptr` and `std::weak_ptr` for shared ownership of observers and resolve lifetime issues for observer objects
 
 ## Evaluation Criteria (0-3 points)
 

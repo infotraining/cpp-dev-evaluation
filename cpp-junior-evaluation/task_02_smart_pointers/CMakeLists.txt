@@ -3,7 +3,7 @@ if (BUILD_SOLUTIONS)
 endif()
 
 add_executable(task_02_smart_pointers_test
-    task_02_test.cpp
+    $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_02_test.cpp>
     $<$<NOT:$<BOOL:${BUILD_SOLUTIONS}>>:task_02.cpp>
     $<$<BOOL:${BUILD_SOLUTIONS}>:${SOLUTION_SOURCES}>
 )
