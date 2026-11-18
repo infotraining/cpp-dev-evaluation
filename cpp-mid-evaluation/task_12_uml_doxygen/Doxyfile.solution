@@ -1,0 +1,13 @@
+PROJECT_NAME           = "Mid C++ Workflow (solution)"
+OUTPUT_DIRECTORY       = build/doxygen_solution
+INPUT                  = task_12_solution.hpp
+RECURSIVE              = NO
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = YES
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+# \dot needs Graphviz; \msc uses Doxygen's built-in renderer.
+HAVE_DOT               = YES
