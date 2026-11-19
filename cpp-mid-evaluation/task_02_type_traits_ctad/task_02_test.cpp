@@ -9,8 +9,9 @@ using namespace Solution;
 #include "task_02.hpp"
 #endif
 
-TEST(TypeTraitsCtadTest, DetectsSupportedTypes)
+TEST(TypeTraitsCtadTest, DetectionSupportedTypes)
 {
+    EXPECT_TRUE((is_supported_value_v<int>));
     EXPECT_TRUE((is_supported_value_v<const int&>));
     EXPECT_TRUE((is_supported_value_v<std::string>));
     EXPECT_FALSE((is_supported_value_v<void*>));

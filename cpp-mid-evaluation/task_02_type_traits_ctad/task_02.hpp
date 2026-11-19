@@ -12,6 +12,8 @@ struct is_supported_value : std::false_type
 template <typename T>
 inline constexpr bool is_supported_value_v = is_supported_value<std::remove_cvref_t<T>>::value;
 
+///////////////////////////////////////////////////////
+
 template <typename T>
 struct ValueBox
 {
@@ -21,6 +23,8 @@ struct ValueBox
 template <typename T>
 ValueBox(T) -> ValueBox<T>;
 ValueBox(const char*) -> ValueBox<std::string>;
+
+///////////////////////////////////////////////////////
 
 template <typename T>
 std::string format_value(const T& value)
