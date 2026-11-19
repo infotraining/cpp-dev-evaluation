@@ -8,7 +8,8 @@ using namespace Solution;
 #include "task_12.hpp"
 #endif
 
-TEST(OopDesignTest, DateEnforcesInvariants) {
+TEST(OopDesignTest, DateEnforcesInvariants)
+{
     EXPECT_THROW(SimpleDate(32, 5, 2025), std::invalid_argument);
     EXPECT_THROW(SimpleDate(10, 13, 2025), std::invalid_argument);
 
@@ -17,8 +18,10 @@ TEST(OopDesignTest, DateEnforcesInvariants) {
     EXPECT_EQ(d.month(), 6);
 }
 
-TEST(OopDesignTest, NotificationServiceUsesComposition) {
-    struct MockLogger : public ILogger {
+TEST(OopDesignTest, NotificationServiceUsesComposition)
+{
+    struct MockLogger : public ILogger
+    {
         std::string lastMessage;
         void log(const std::string& msg) override { lastMessage = msg; }
     };
@@ -29,4 +32,3 @@ TEST(OopDesignTest, NotificationServiceUsesComposition) {
 
     EXPECT_EQ(logger.lastMessage, "Alert sent to: admin");
 }
-

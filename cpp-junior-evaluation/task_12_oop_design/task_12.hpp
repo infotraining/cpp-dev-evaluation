@@ -22,5 +22,4 @@ class NotificationService
 public:
     explicit NotificationService();
     void send_alert(const std::string& user);
-
 };

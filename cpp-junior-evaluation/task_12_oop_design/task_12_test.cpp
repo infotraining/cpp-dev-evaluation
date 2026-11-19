@@ -8,7 +8,8 @@ using namespace Solution;
 #include "task_12.hpp"
 #endif
 
-TEST(OopDesignTest, DateEnforcesInvariants) {
+TEST(OopDesignTest, DateEnforcesInvariants)
+{
     EXPECT_THROW(SimpleDate(32, 5, 2025), std::invalid_argument);
     EXPECT_THROW(SimpleDate(10, 13, 2025), std::invalid_argument);
 
@@ -17,10 +18,9 @@ TEST(OopDesignTest, DateEnforcesInvariants) {
     EXPECT_EQ(d.month(), 6);
 }
 
-TEST(OopDesignTest, NotificationServiceUsesComposition) 
+TEST(OopDesignTest, NotificationServiceUsesComposition)
 {
     // TODO: Implement test that uses mock to verify that NotificationService.send_alert calls the logger correctly
-
 
     NotificationService service;
     service.send_alert("admin");

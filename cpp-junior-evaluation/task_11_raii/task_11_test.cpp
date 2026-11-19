@@ -9,7 +9,8 @@ using namespace Solution;
 #include "task_11.hpp"
 #endif
 
-TEST(RaiiTest, ResetsFlagEvenWhenExceptionIsThrown) {
+TEST(RaiiTest, ResetsFlagEvenWhenExceptionIsThrown)
+{
     bool isRunning = false;
 
     EXPECT_NO_THROW(execute_with_guard(isRunning, false));
@@ -19,7 +20,8 @@ TEST(RaiiTest, ResetsFlagEvenWhenExceptionIsThrown) {
     EXPECT_FALSE(isRunning);
 }
 
-TEST(RaiiTest, GuardIsNonCopyable) {
+TEST(RaiiTest, GuardIsNonCopyable)
+{
     EXPECT_FALSE(std::is_copy_constructible<ScopeFlagGuard>::value);
     EXPECT_FALSE(std::is_copy_assignable<ScopeFlagGuard>::value);
 }
