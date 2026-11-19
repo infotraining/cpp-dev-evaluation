@@ -99,7 +99,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, MovesComplexRangeWithDuplicates)
     SourceType source{1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9, 9, 10, 10, 11, 12, 13, 14, 15};
     DestinationType destination{};
 
-    move_chunk_of_container_to(source, destination, 5, 10);
+    move_value_range_to(source, destination, 5, 10);
 
     // Convert to vector for comparison
     std::vector<int> dest_vec(destination.begin(), destination.end());
@@ -117,7 +117,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, MovesBeginningRange)
     SourceType source{1, 2, 3, 4, 5};
     DestinationType destination{};
 
-    move_chunk_of_container_to(source, destination, 1, 3);
+    move_value_range_to(source, destination, 1, 3);
 
     std::vector<int> dest_vec(destination.begin(), destination.end());
     std::vector<int> source_vec(source.begin(), source.end());
@@ -134,7 +134,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, AppendsToPreffilledDestination)
     SourceType source{10, 20, 30, 40, 50};
     DestinationType destination{100, 200};
 
-    move_chunk_of_container_to(source, destination, 20, 40);
+    move_value_range_to(source, destination, 20, 40);
 
     std::vector<int> dest_vec(destination.begin(), destination.end());
     std::vector<int> source_vec(source.begin(), source.end());
@@ -151,7 +151,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, MovesAllIdenticalValues)
     SourceType source{5, 5, 5, 5};
     DestinationType destination{};
 
-    move_chunk_of_container_to(source, destination, 5, 5);
+    move_value_range_to(source, destination, 5, 5);
 
     std::vector<int> dest_vec(destination.begin(), destination.end());
     std::vector<int> source_vec(source.begin(), source.end());
@@ -168,7 +168,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, MovesSingleElementAtStart)
     SourceType source{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     DestinationType destination{};
 
-    move_chunk_of_container_to(source, destination, 1, 1);
+    move_value_range_to(source, destination, 1, 1);
 
     std::vector<int> dest_vec(destination.begin(), destination.end());
     std::vector<int> source_vec(source.begin(), source.end());
@@ -185,7 +185,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, MovesSingleElementAtEnd)
     SourceType source{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     DestinationType destination{};
 
-    move_chunk_of_container_to(source, destination, 10, 10);
+    move_value_range_to(source, destination, 10, 10);
 
     std::vector<int> dest_vec(destination.begin(), destination.end());
     std::vector<int> source_vec(source.begin(), source.end());
@@ -202,7 +202,7 @@ TYPED_TEST(MoveChunkOfContainerToTest, MovesMiddleRange)
     SourceType source{1, 2, 3, 4, 5, 6, 7, 8};
     DestinationType destination{};
 
-    move_chunk_of_container_to(source, destination, 3, 6);
+    move_value_range_to(source, destination, 3, 6);
 
     std::vector<int> dest_vec(destination.begin(), destination.end());
     std::vector<int> source_vec(source.begin(), source.end());

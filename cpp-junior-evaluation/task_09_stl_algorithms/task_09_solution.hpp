@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <optional>
 
 namespace Solution
 {
@@ -12,6 +13,7 @@ namespace Solution
     };
 
     double total_in_stock_gross_value(const std::vector<Product>& products, double vatRate);
-    const Product* find_product_by_id(std::vector<Product>& products, int targetId);
+
+    std::optional<Product> find_product_by_id(std::vector<Product>& products, int targetId);
 
 } // namespace Solution

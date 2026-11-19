@@ -48,7 +48,7 @@ TEST(StlContainersTest, MovesChunkOfContainerToVector)
     std::vector<int> source = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::vector<int> destination;
 
-    move_chunk_of_container_to(source, destination, 3, 6);
+    move_value_range_to(source, destination, 3, 6);
 
     std::vector<int> expected_source = {1, 2, 7, 8, 9};
     std::vector<int> expected_destination = {3, 4, 5, 6};

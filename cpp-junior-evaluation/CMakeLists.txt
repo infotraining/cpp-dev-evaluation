@@ -22,7 +22,7 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 # Przełącznik: OFF = buduje kod startowy kandydata, ON = buduje rozwiązania wzorcowe
-option(BUILD_SOLUTIONS "Build reference solutions instead of starter code" OFF)
+option(BUILD_SOLUTIONS "Build reference solutions instead of starter code" ON)
 
 add_subdirectory(task_01_polymorphism)
 add_subdirectory(task_02_smart_pointers)

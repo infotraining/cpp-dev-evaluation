@@ -14,19 +14,18 @@ namespace Solution
             });
     }
 
-    const Product* find_product_by_id(std::vector<Product>& products, int targetId)
+    std::optional<Product> find_product_by_id(std::vector<Product>& products, int target_id)
     {
-        std::sort(products.begin(), products.end(),
-            [](const Product& a, const Product& b) { return a.id < b.id; });
+        auto predicate = [target_id](const Product& p) {
+            return p.id == target_id;
+        };
 
-        auto it = std::lower_bound(products.begin(), products.end(), targetId,
-            [](const Product& p, int id) { return p.id < id; });
-
-        if (it != products.end() && it->id == targetId)
+        if (auto pos = std::find_if(products.begin(), products.end(), predicate); pos != products.end())
         {
-            return &(*it);
+            return *pos;
         }
-        return nullptr;
+
+        return std::nullopt;
     }
 
 } // namespace Solution

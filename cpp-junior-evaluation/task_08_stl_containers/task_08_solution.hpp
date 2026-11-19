@@ -14,7 +14,7 @@ namespace Solution
     std::unordered_map<std::string, int> count_word_frequencies(const std::vector<std::string>& words);
 
     template <std::ranges::range TSource, std::ranges::range TDest, std::totally_ordered TValue>
-    void move_chunk_of_container_to(TSource& source, TDest& destination, const TValue& value_from, const TValue& value_to)
+    void move_value_range_to(TSource& source, TDest& destination, const TValue& value_from, const TValue& value_to)
     {
         assert(std::is_sorted(source.begin(), source.end())); // precondition: source must be sorted
 

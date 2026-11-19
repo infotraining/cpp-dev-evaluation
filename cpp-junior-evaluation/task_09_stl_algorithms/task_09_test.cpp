@@ -11,22 +11,25 @@ using namespace Solution;
 TEST(StlAlgorithmsTest, CalculatesGrossValueForInStockItems)
 {
     std::vector<Product> items = {
-        {1, 100.0, true},
-        {2, 50.0, false},
-        {3, 200.0, true}};
+        Product{1, 100.0, true},
+        Product{2, 50.0, false},
+        Product{3, 200.0, true}};
     EXPECT_DOUBLE_EQ(total_in_stock_gross_value(items, 0.23), 369.0);
 }
 
 TEST(StlAlgorithmsTest, SortsAndFindsProductWithLowerBound)
 {
-    std::vector<Product> items = {
-        {30, 10.0, true},
-        {10, 20.0, true},
-        {20, 30.0, false}};
+    using std::nullopt;
 
-    const Product* found = find_product_by_id(items, 20);
-    ASSERT_NE(found, nullptr);
+    std::vector<Product> items = {
+        Product{30, 10.0, true},
+        Product{10, 20.0, true},
+        Product{20, 30.0, false}
+    };
+
+    std::optional<Product> found = find_product_by_id(items, 20);
+    ASSERT_NE(found, nullopt);
     EXPECT_DOUBLE_EQ(found->price, 30.0);
 
-    EXPECT_EQ(find_product_by_id(items, 25), nullptr);
+    EXPECT_EQ(find_product_by_id(items, 25), nullopt);
 }
