@@ -1,10 +1,10 @@
 if(BUILD_SOLUTIONS)
-    set(TASK_SOURCES task_01_solution.cpp)
+    set(TASK_SOURCES task_01_solution.cpp task_01_solution_test.cpp)
 else()
-    set(TASK_SOURCES task_01.cpp)
+    set(TASK_SOURCES task_01.cpp task_01_test.cpp)
 endif()
 
-add_executable(task_01_generic_algorithms_test ${TASK_SOURCES} task_01_test.cpp)
+add_executable(task_01_generic_algorithms_test ${TASK_SOURCES})
 
 target_include_directories(task_01_generic_algorithms_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
