@@ -1,6 +1,7 @@
 #pragma once
 
-class ScopeFlagGuard {
+class ScopeFlagGuard
+{
 public:
     explicit ScopeFlagGuard(bool& flag);
     ~ScopeFlagGuard();
