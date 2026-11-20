@@ -1,10 +1,10 @@
 #pragma once
 
 #include <functional>
+#include <string>
 #include <type_traits>
 #include <utility>
 #include <vector>
-#include <string>
 
 namespace Solution
 {
@@ -13,9 +13,18 @@ namespace Solution
     {
     public:
         ValueSeries();
+
         void add(T value);
+
         const std::vector<T>& values() const;
+
         std::size_t size() const;
+
+        template <typename... Args>
+        void emplace(Args&&... args)
+        {
+            values_.emplace_back(std::forward<Args>(args)...);
+        }
 
     private:
         std::vector<T> values_;
@@ -40,9 +49,9 @@ namespace Solution
     namespace Cpp20
     {
         template <typename TRange, typename Predicate, typename Transform>
-            requires std::ranges::range<TRange> 
-                && std::predicate<Predicate, std::ranges::range_reference_t<TRange>> 
-                && std::invocable<Transform, std::ranges::range_reference_t<TRange>> 
+            requires std::ranges::range<TRange>
+            && std::predicate<Predicate, std::ranges::range_reference_t<TRange>>
+            && std::invocable<Transform, std::ranges::range_reference_t<TRange>>
         auto filter_transform(const TRange& input, Predicate predicate, Transform transform)
             -> std::vector<std::remove_cvref_t<std::invoke_result_t<Transform, std::ranges::range_reference_t<TRange>>>>
         {

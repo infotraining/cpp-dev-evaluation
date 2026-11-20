@@ -1,6 +1,8 @@
 # Task 2: Type Traits and CTAD
 
-Implement a `ValueBox<T>` that stores a value and a `format_value` function for arithmetic and text values. Provide a custom `is_supported_value` trait, use `if constexpr` for type-specific formatting, and add a deduction guide so a string literal creates a `ValueBox<std::string>`.
+1. Implement a trait `is_supported_value` that detects whether a type is supported. Supported types include arithmetic types and `std::string`.
+2. Implement a `ValueBox<T>` that stores a value of type `T`. Use CTAD (Class Template Argument Deduction) to deduce the type from the constructor arguments.
+3. Implement a `format_value` function that formats arithmetic and text values appropriately. Use `if constexpr` to handle different types at compile time.
 
 Unsupported types should be rejected at compile time. Keep that contract clear in the public API.
 

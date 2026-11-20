@@ -1,13 +1,16 @@
 # Task 1: Generic Algorithms and Explicit Instantiation
 
-Implement `ValueSeries<T>` and the `filter_transform` function template. The series stores values, supports appending, and exposes read-only access. `filter_transform` selects values with a predicate and applies a transformation, returning values of the transformation's result type.
+1. Implement the `ValueSeries<T>` class template. The series stores values, supports appending, and exposes read-only access. 
+   Explicitly instantiate the supported types (`int`, `double`, and `std::string`) in the `.cpp` file.
+   
+2. Implement the `filter_transform` function template. It selects values with a predicate and applies a transformation, returning std::vector of values of the transformation's result type.
 
 Requirements:
 
-* Support the explicitly instantiated `int` and `double` series types.
+* Support the explicitly instantiated `int`, `double`, and `std::string` series types.
+* Keep the class-template implementation in the `.cpp` file and explicitly instantiate the supported types.
 * Keep `filter_transform` generic and usable with capturing lambdas.
 * Avoid unnecessary copies when reading input values.
-* Keep the class-template implementation in the `.cpp` file and explicitly instantiate the supported types.
 
 ## Scoring (0-3 points)
 
