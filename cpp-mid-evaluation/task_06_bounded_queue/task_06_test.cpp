@@ -4,6 +4,7 @@
 #include <future>
 #include <optional>
 #include <thread>
+#include <latch>
 
 #ifdef USE_SOLUTION
 #include "task_06_solution.hpp"
@@ -29,7 +30,9 @@ TEST(BoundedQueueTest, PushesPopsAndDrainsAfterClose)
 TEST(BoundedQueueTest, CloseWakesWaitingConsumer)
 {
     BoundedQueue<int> queue(1);
-    auto result = std::async(std::launch::async, [&queue] { return queue.pop(); });
+    std::latch latch(1);
+    auto result = std::async(std::launch::async, [&queue, &latch] { latch.count_down(); return queue.pop(); });
+    latch.wait();
     queue.close();
     ASSERT_EQ(result.wait_for(1s), std::future_status::ready);
     EXPECT_EQ(result.get(), std::nullopt);
@@ -39,9 +42,15 @@ TEST(BoundedQueueTest, ConsumerFreesCapacityForBlockedProducer)
 {
     BoundedQueue<int> queue(1);
     ASSERT_TRUE(queue.push(1));
-    auto producer = std::async(std::launch::async, [&queue] { return queue.push(2); });
+    std::latch latch(1);
+
+    auto producer = std::async(std::launch::async, [&queue, &latch] { latch.count_down(); return queue.push(2); });
+    latch.wait();
+    
     EXPECT_EQ(queue.pop(), 1);
+    
     ASSERT_EQ(producer.wait_for(1s), std::future_status::ready);
+    
     EXPECT_TRUE(producer.get());
     EXPECT_EQ(queue.pop(), 2);
     queue.close();
@@ -51,8 +60,15 @@ TEST(BoundedQueueTest, CloseWakesBlockedProducer)
 {
     BoundedQueue<int> queue(1);
     ASSERT_TRUE(queue.push(1));
-    auto producer = std::async(std::launch::async, [&queue] { return queue.push(2); });
+    std::latch latch(1);
+    
+    auto producer = std::async(std::launch::async, [&queue, &latch] { 
+        latch.count_down();
+        return queue.push(2); });
+    latch.wait();
+    
     queue.close();
+    
     ASSERT_EQ(producer.wait_for(1s), std::future_status::ready);
     EXPECT_FALSE(producer.get());
 }

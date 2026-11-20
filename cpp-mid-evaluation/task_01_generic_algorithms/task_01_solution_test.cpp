@@ -27,8 +27,8 @@ TEST(GenericAlgorithmsTest_Solution, ValueSeriesStoresStrings)
     ValueSeries<std::string> strings;
     strings.add("hello");
     strings.add("world");
-    strings.emplace('*', 3);
-    EXPECT_EQ(strings.size(), 2u);
+    strings.emplace(3, '*');
+    EXPECT_EQ(strings.size(), 3u);
     EXPECT_EQ(strings.values(), (std::vector<std::string>{"hello", "world", "***"}));
 }
 

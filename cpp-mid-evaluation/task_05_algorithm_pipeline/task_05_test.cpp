@@ -28,3 +28,21 @@ TEST(AlgorithmPipelineTest, EmptyInputProducesEmptyReport)
 {
     EXPECT_TRUE(build_report({}, 0).empty());
 }
+
+TEST(AlgorithmPipelineTest, GetsTopNItems)
+{
+    const std::vector<ScoredItem> items{
+        {3, 80, "C"}, 
+        {2, 95, "B"}, 
+        {1, 95, "A"}, 
+        {4, 40, "D"}, 
+        {5, 60, "E"},
+        {6, 70, "F"}
+    };
+
+    const auto top_2 = get_top_n(items, 2);
+    
+    ASSERT_EQ(top_2.size(), 2);
+    EXPECT_EQ(top_2[0].id, 1);
+    EXPECT_EQ(top_2[1].id, 2);
+}

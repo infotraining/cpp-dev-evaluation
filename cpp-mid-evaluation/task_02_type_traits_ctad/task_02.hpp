@@ -18,11 +18,9 @@ template <typename T>
 struct ValueBox
 {
     T value;
-};
 
-template <typename T>
-ValueBox(T) -> ValueBox<T>;
-ValueBox(const char*) -> ValueBox<std::string>;
+    explicit ValueBox(const T& v) : value(v) {}
+};
 
 ///////////////////////////////////////////////////////
 

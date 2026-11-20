@@ -19,11 +19,15 @@ TEST(TypeTraitsCtadTest, DetectionSupportedTypes)
 
 TEST(TypeTraitsCtadTest, DeductionGuideMapsStringLiteralToString)
 {
+    // FAIL();
+    // Uncomment the following code
+
     ValueBox number{42};
-    ValueBox text{"hello"};
     static_assert(std::is_same_v<decltype(number), ValueBox<int>>);
-    static_assert(std::is_same_v<decltype(text), ValueBox<std::string>>);
     EXPECT_EQ(number.value, 42);
+    
+    ValueBox text{"hello"};
+    static_assert(std::is_same_v<decltype(text), ValueBox<std::string>>);
     EXPECT_EQ(text.value, "hello");
 }
 

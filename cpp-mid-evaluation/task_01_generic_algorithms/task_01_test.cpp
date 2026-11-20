@@ -11,6 +11,8 @@ using namespace Solution;
 
 TEST(GenericAlgorithmsTest, SeriesStoresExplicitlyInstantiatedTypes)
 {
+    FAIL(); // Remove this line and uncomment the following code to enable the test
+
     // ValueSeries<int> integers;
     // integers.add(3);
     // integers.add(7);
@@ -24,11 +26,13 @@ TEST(GenericAlgorithmsTest, SeriesStoresExplicitlyInstantiatedTypes)
 
 TEST(GenericAlgorithmsTest, ValueSeriesStoresStrings)
 {
+    FAIL(); // Remove this line and uncomment the following code to enable the test
+
     // ValueSeries<std::string> strings;
     // strings.add("hello");
     // strings.add("world");
-    // strings.emplace('*', 3);
-    // EXPECT_EQ(strings.size(), 2u);
+    // strings.emplace(3, '*');
+    // EXPECT_EQ(strings.size(), 3u);
     // EXPECT_EQ(strings.values(), (std::vector<std::string>{"hello", "world", "***"}));
 }
 
@@ -36,6 +40,8 @@ TEST(GenericAlgorithmsTest, ValueSeriesStoresStrings)
 
 TEST(GenericAlgorithmsTest, FiltersAndTransformsWithCapturingLambdas)
 {
+    FAIL(); // Remove this line and uncomment the following code to enable the test
+
     // const std::vector<int> input{1, 2, 3, 4};
     // const int minimum = 2;
 
@@ -49,6 +55,8 @@ TEST(GenericAlgorithmsTest, FiltersAndTransformsWithCapturingLambdas)
 
 TEST(GenericAlgorithmsTest, EmptyInputProducesEmptyOutput)
 {
+    FAIL(); // Remove this line and uncomment the following code to enable the test
+
     //     const std::vector<double> input;
     //     const std::vector<int> output = filter_transform(input, [](double) { return true; }, [](double value) { return static_cast<int>(value); });
     //     EXPECT_TRUE(output.empty());

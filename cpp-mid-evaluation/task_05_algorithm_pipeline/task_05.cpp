@@ -13,3 +13,10 @@ const ScoredItem* find_item_by_id(const std::vector<ScoredItem>& items, int id)
     (void)id;
     return nullptr;
 }
+
+std::vector<ScoredItem> get_top_n(const std::vector<ScoredItem>& items, std::size_t n)
+{
+    (void)items;
+    (void)n;
+    return {};
+}
